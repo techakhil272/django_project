@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %} Contact Us {% endblock title %} 
+{% block body %}
+<form action="/contact" method="post" >
+    {% csrf_token %}
+    <div class="container d-flex justify-content-center text-white">
+        <div class="contact px-5 py-5 w-100">
+            <h4>Leave a comment on this post</h4>
+            <div class="row">
+                
+                <div class="col-md-6 px-2 py-2"> 
+                    <label for="fname">Name?</label><br>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Type your name" /> </div>
+                {% comment %} <div class="col-md-6 px-4 py-4"> 
+                    <label for="fname">First name:</label><br>
+                    <input type="text" class="form-control" placeholder="phone" /> 
+                </div> {% endcomment %}
+            </div>
+            <div class="row">
+                <div class="col-md-6 px-2 py-2"> 
+                    <label for="email">Email</label><br>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Type your Email Address" />
+                 </div>
+            </div>
+            <div class="row mt-3">                
+                <div class="col-md-12 px-2 py-2"> 
+                    <label for="desc">What's Up?</label><br>
+                    <textarea rows="6" class="form-control" id="desc" name="desc" placeholder="Let us know how can we help you?"></textarea> </div>
+            </div>
+            <div class="pull-left py-2"> <button class="btn btn-success mt-2 px-5">Send Message <i class="fa fa-long-arrow-right ml-2 mt-1"></i></button> </div>
+        </div>
+    </div>
+{% endblock body %}
